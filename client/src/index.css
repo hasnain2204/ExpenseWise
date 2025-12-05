@@ -1,0 +1,93 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  /* Minty Green Primary - Friendly & Financial */
+  --color-primary: hsl(162 72% 40%);
+  --color-primary-foreground: hsl(0 0% 100%);
+
+  /* Warm Coral Secondary - For "Owe" states but not aggressive */
+  --color-destructive: hsl(10 80% 60%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+
+  /* Soft Backgrounds */
+  --color-background: hsl(210 20% 98%);
+  --color-foreground: hsl(215 25% 27%);
+
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(215 25% 27%);
+
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(215 25% 27%);
+
+  --color-secondary: hsl(210 20% 90%);
+  --color-secondary-foreground: hsl(215 25% 27%);
+
+  --color-muted: hsl(210 20% 94%);
+  --color-muted-foreground: hsl(215 20% 65%);
+
+  --color-accent: hsl(162 40% 95%);
+  --color-accent-foreground: hsl(162 72% 40%);
+
+  --color-border: hsl(210 20% 90%);
+  --color-input: hsl(210 20% 90%);
+  --color-ring: hsl(162 72% 40%);
+
+  /* Chart Colors */
+  --color-chart-1: hsl(162 72% 45%);
+  --color-chart-2: hsl(10 80% 60%);
+  --color-chart-3: hsl(215 25% 27%);
+  --color-chart-4: hsl(43 90% 60%);
+  --color-chart-5: hsl(280 60% 60%);
+
+  --color-sidebar: hsl(0 0% 100%);
+  --color-sidebar-foreground: hsl(215 25% 27%);
+  --color-sidebar-primary: hsl(162 72% 45%);
+  --color-sidebar-primary-foreground: hsl(0 0% 100%);
+  --color-sidebar-accent: hsl(210 20% 96%);
+  --color-sidebar-accent-foreground: hsl(215 25% 27%);
+  --color-sidebar-border: hsl(210 20% 90%);
+  --color-sidebar-ring: hsl(162 72% 40%);
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    background-image: radial-gradient(circle at 10% 10%, hsl(162 72% 98%) 0%, transparent 20%),
+                      radial-gradient(circle at 90% 90%, hsl(210 20% 95%) 0%, transparent 20%);
+    background-attachment: fixed;
+  }
+}
+
+/* Custom Glass Effect */
+.glass-panel {
+  @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-sm;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, hsl(162 72% 96%) 0%, hsl(210 20% 98%) 100%);
+}
+
+/* Utilities for safe area spacing on mobile */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 20px);
+}
